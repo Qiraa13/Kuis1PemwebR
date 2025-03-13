@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('profile-background.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(120, 40, 100, 0.7); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .navbar-items p, .navbar-link a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar-link a:hover {
+            text-decoration: underline;
+        }
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-card {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            height: auto;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(180, 90, 130, 0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 15px;
+            border-radius: 15px;
+            width: 30%;
+        }
+        .profile-card p, .profile-card h2 {
+            pointer-events: none;
+            user-select: none;
+            margin: 5px 0;
+        }
+        .profile-card img {
+            border-radius: 50%;
+            width: 50%;
+            max-width: 100px;
+        }
+        .profile-card button {
+            background-color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .profile-card button a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .profile-card button:hover {
+            background-color: lightgray;
+        }
+        /* Live Time */
+        .digital-clock {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-items">
+            <p>Profil Mahasiswa</p>
+        </div>
+    </div>
+    
+    <main>
+        <section id="profil-section" class="profile-container">
+            <div class="profile-card">
+                <img src="Profile-pict.jpeg" alt="Foto Profil">
+                <h2 style="font-size: 16px;">Syauqi Rahmat</h2>
+                <p>2317051084</p>
+                <p>S1 Ilmu Komputer</p>
+                <button><a href="Jadwal.html">Jadwal Perkuliahan</a></button>
+                <button><a href="#########">   Linktree   </a></button>
+                <button><a href="#########">   Instagram   </a></button>
+                <button><a href="#########">   Facebook   </a></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Live Time Display -->
+    <div class="digital-clock" id="clock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            let seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
